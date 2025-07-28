@@ -1,8 +1,8 @@
-# AgroLink: Direct Government Support to Farmers
+# AgroLink: Digitizing Agricultural Input Delivery in Ethiopia
 
 ## 👥 Contributors
-- **Kidist Shewangzewu**
-- **Yohanes**
+- **Kidist Shewangizewu**
+- **Mulualem Mekonin Mezmur**
 - **Amanuel Alemu Zewdu**
 
 ---
@@ -70,9 +70,9 @@ This eliminates brokers and ensures that only **verified farmers** access the re
 
 | **Component**           | **Technology**                                |
 |-------------------------|-----------------------------------------------|
-| Frontend                | HTML, CSS, JavaScript, React (Optional)       |
-| Backend                 | Node.js / Express or Django (TBD)             |
-| Database                | PostgreSQL / MongoDB / MySQL                  |
+| Frontend                | HTML, CSS, JavaScript, React                  |
+| Backend                 | Node.js / JavaScript / PHP                    |
+| Database                | MySQL                                         |
 | Authentication          | VeriFayda OIDC (OAuth 2.0 integration)        |
 | National ID Registry    | Fayda Integration APIs                        |
 | Hosting (Optional)      | Render / Netlify / Heroku / Vercel            |
