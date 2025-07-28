@@ -70,7 +70,7 @@ This eliminates brokers and ensures that only **verified farmers** access the re
 
 | **Component**           | **Technology**                                |
 |-------------------------|-----------------------------------------------|
-| Frontend                | HTML, CSS, JavaScript, React                  |
+| Frontend                | HTML, CSS, JavaScript                         |
 | Backend                 | Node.js / JavaScript / PHP                    |
 | Database                | MySQL                                         |
 | Authentication          | VeriFayda OIDC (OAuth 2.0 integration)        |
