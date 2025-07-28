@@ -1,7 +1,7 @@
 # AgroLink: Digitizing Agricultural Input Delivery in Ethiopia
 
 ## 👥 Contributors
-- **Kidist Shewangizewu**
+- **Kidist Shewangizawe**
 - **Mulualem Mekonin Mezmur**
 - **Amanuel Alemu Zewdu**
 
