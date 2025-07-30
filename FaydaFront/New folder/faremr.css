@@ -1,0 +1,433 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; /* Ensures the body takes full viewport height */
+    box-sizing: border-box; /* Include padding in width calculation for all elements */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A more modern sans-serif */
+    background-image: url('istockphoto-1786486973-612x612.jpg'); /* Your background image */
+    background-size: cover; /* Cover the entire element */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fix the background so it doesn't scroll with content */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    color: #333;
+    display: flex; /* Use flexbox for main content alignment */
+    flex-direction: column; /* Stack header, main, etc. vertically */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+/* Header styling */
+header {
+    background-color: rgba(60, 150, 60, 0.95); /* Deeper green, slightly less transparent */
+    color: white;
+    padding: 1.2em 0;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Larger heading */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav button {
+    background-color: #72b072; /* Lighter green for buttons */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px; /* More rounded buttons */
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header nav button:hover {
+    background-color: #5cb85c;
+    transform: translateY(-2px);
+}
+
+/* Main content area */
+main {
+    flex-grow: 1; /* Allows main to take up available vertical space */
+    padding: 30px 20px; /* More padding */
+    display: flex;
+    justify-content: center; /* Center sections horizontally */
+    align-items: flex-start; /* Align sections to the top */
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.95); /* More opaque white background for readability */
+    padding: 30px;
+    margin: 15px; /* More margin */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Stronger, more diffused shadow */
+    width: 70%; /* Increased width */
+    max-width: 900px; /* Increased max width for larger screens */
+    min-width: 320px; /* Ensure responsiveness on smaller screens */
+    display: none; /* Hidden by default */
+    transition: all 0.5s ease-in-out; /* Smooth transition for display */
+}
+
+section.active {
+    display: block; /* Shown when active */
+    animation: fadeIn 0.8s ease-out; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2, h3, h4 {
+    color: #3C963C; /* A slightly darker green for headings */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.auth-form {
+    display: none; /* Hidden by default */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent white for forms */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1); /* Inner shadow for depth */
+}
+
+.auth-form.active {
+    display: block; /* Shown when active */
+}
+
+.auth-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between form elements */
+    align-items: center; /* Changed to 'center' to center all elements within the form */
+}
+
+.auth-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    width: 100%; /* Ensure label takes full width */
+    text-align: center; /* Centered label text */
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="tel"],
+.auth-form input[type="password"] {
+    padding: 8px 12px; /* Decreased top/bottom padding from 12px to 8px */
+    margin-bottom: 15px;
+    border: 1px solid #cceecce; /* Lighter border */
+    border-radius: 8px; /* More rounded inputs */
+    font-size: 1em;
+    width: 60%; /* Decreased width for input fields */
+    max-width: 250px; /* Decreased max-width for input fields */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form input[type="text"]:focus,
+.auth-form input[type="email"]:focus,
+.auth-form input[type="tel"]:focus,
+.auth-form input[type="password"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+    outline: none;
+}
+
+.auth-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 60%; /* Align button width with inputs */
+    max-width: 250px; /* Align button max-width with inputs */
+}
+
+.auth-form button[type="submit"]:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+}
+
+.auth-form p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.auth-form a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+    color: #3C963C;
+}
+
+/* Dashboard styling */
+.dashboard {
+    display: none; /* Hidden until logged in */
+    flex-direction: column; /* Stack dashboard elements vertically */
+    width: 100%; /* Take full width of its parent section */
+    padding: 0; /* Remove padding from dashboard div itself, let section handle it */
+}
+
+.dashboard.active {
+    display: flex; /* Shown when logged in */
+}
+
+.dashboard h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #3C963C;
+}
+
+.dashboard nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: rgba(240, 240, 240, 0.9); /* Light background for nav */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-wrap: wrap; /* Allow nav items to wrap */
+}
+
+.dashboard nav li {
+    margin: 5px 15px; /* Adjust margin for wrapped items */
+}
+
+.dashboard nav a {
+    text-decoration: none;
+    color: #555;
+    padding: 10px 15px;
+    border-bottom: 3px solid transparent; /* Thicker border for active state */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block; /* Make the whole area clickable */
+}
+
+.dashboard nav a:hover,
+.dashboard nav a.active {
+    color: #4CAF50;
+    border-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.05); /* Very light background on hover/active */
+    border-radius: 4px; /* Small radius for nav items */
+}
+
+.dashboard .content {
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent background for content */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    min-height: 250px; /* Ensure some height even if content is short */
+    display: flex; /* Use flex for inner content section */
+    flex-direction: column;
+}
+
+.dashboard .content section {
+    display: none; /* Dashboard content sections initially hidden */
+    background-color: transparent; /* No background for inner sections */
+    padding: 0; /* No padding, parent .content handles it */
+    border: none; /* No border for inner sections */
+    box-shadow: none; /* No shadow for inner sections */
+    margin: 0;
+    width: 100%; /* Full width within content div */
+    min-width: auto;
+    animation: fadeIn 0.8s ease-out; /* Fade in animation */
+}
+
+.dashboard .content section.active {
+    display: block; /* Show active dashboard content */
+}
+
+.dashboard button {
+    background-color: #dc3545; /* Red for logout */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 1.05em;
+    font-weight: bold;
+    align-self: center; /* Center logout button */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dashboard button:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* New styles for material list */
+.material-list {
+    display: grid; /* Use CSS Grid for a responsive layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Auto-fit columns, slightly wider min */
+    gap: 20px; /* More space between grid items */
+    margin-top: 25px;
+}
+
+.material-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Nicer shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to the bottom */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.material-item:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.material-item h5 {
+    color: #28a745; /* A slightly darker green for material titles */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.material-item p {
+    font-size: 1em; /* Slightly larger text */
+    color: #555;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows paragraph to take space */
+}
+
+.material-item .order-btn {
+    background-color: #007bff; /* Blue for order button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px; /* More rounded order buttons */
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.material-item .order-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+.material-item img {
+    width: 250px;    /* Adjust as needed */
+    height: 200;   /* Keeps aspect ratio */
+    display: block;
+    margin: 0 auto 10px auto;
+}
+/* Specific styles for lists within dashboard sections */
+#farmerOrderHistoryList, #governmentOrderList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#farmerOrderHistoryList li, #governmentOrderList li {
+    background-color: #f0f8f0; /* Light green background for list items */
+    border: 1px solid #d4ead4;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    section {
+        width: 90%; /* Increased width for tablets */
+        max-width: 1000px; /* Adjusted max width for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header nav button {
+        padding: 10px 20px;
+        font-size: 1em;
+        margin: 5px;
+    }
+
+    main {
+        padding: 20px 10px;
+    }
+
+    section {
+        width: 95%; /* Almost full width on smaller mobiles */
+        margin: 10px 5px;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: none; /* Remove max-width on smaller screens for better fill */
+    }
+
+    .auth-form input[type="text"],
+    .auth-form input[type="email"],
+    .auth-form input[type="tel"],
+    .auth-form input[type="password"],
+    .auth-form button[type="submit"] {
+        width: 90%; /* Adjust input and button width for smaller mobiles */
+        max-width: none; /* Remove max-width on smaller screens for better fill */
+    }
+
+    .dashboard nav ul {
+        flex-direction: column; /* Stack nav items vertically on small screens */
+        padding: 10px;
+    }
+
+    .dashboard nav li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .dashboard nav a {
+        padding: 10px;
+    }
+
+    .material-list {
+        grid-template-columns: 1fr; /* Single column for material items on small screens */
+    }
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroLink - Connecting Farmers to Resources</title>
+    <link rel="stylesheet" href="faremr.css">
+    </head>
+<body>
+    <header>
+        <h1>AgroLink <br> Digitlizing Agricultural Input Delivery In Ethiopia</h1>
+        <nav>
+            <button id="showFarmer">Farmer</button>
+            <button id="showGovernment">Government</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="farmerSection" class="active">
+            <h2>Farmer</h2>
+            <div id="farmerAuth">
+                <h3>Dear Farmers, Welcome!</h3>
+                <div id="farmerLogin" class="auth-form active">
+                    <h4>Login</h4>
+                    <form>
+                        <label for="farmerUsernameLogin">Please Enter Username:</label>
+                        <input type="text" id="farmerUsernameLogin" required>
+
+                        <label for="farmerPasswordLogin">Please Enter Password:</label>
+                        <input type="password" id="farmerPasswordLogin" required>
+
+                        <label for="farmerFANLogin">Please Enter FAN (Digital ID):</label>
+                        <input type="text" id="farmerFANLogin" placeholder="Enter your Fayda National ID" required>
+
+                        <button type="submit">Login</button>
+                    </form>
+                    <p>New here? <a href="#" id="showFarmerRegister">Register</a></p>
+                </div>
+
+                <div id="farmerRegister" class="auth-form">
+                    <h4>Register</h4>
+                    <form>
+                        <label for="farmerFullName">Please Enter Full Name:</label>
+                        <input type="text" id="farmerFullName" required>
+
+                        <label for="farmerEmail">Please Enter Email:</label>
+                        <input type="email" id="farmerEmail" required>
+
+                        <label for="farmerPhone">Please Enter Phone Number:</label>
+                        <input type="tel" id="farmerPhone" placeholder="e.g., +251912345678" required>
+
+                        <label for="farmerUsernameRegister">Please Enter Username:</label>
+                        <input type="text" id="farmerUsernameRegister" required>
+
+                        <label for="farmerPasswordRegister">Please Enter Password:</label>
+                        <input type="password" id="farmerPasswordRegister" required>
+
+                        <label for="farmerFANRegister">Please Enter FAN (Digital ID):</label>
+                        <input type="text" id="farmerFANRegister" placeholder="Enter your Fayda National ID" required>
+
+                        <button type="submit">Register</button>
+                    </form>
+                    <p>Already have an account? <a href="#" id="showFarmerLogin">Login</a></p>
+                </div>
+            </div>
+
+            <div id="farmerDashboard" class="dashboard">
+                <h3>Farmer Dashboard</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#farmerHome" class="active">Home</a></li>
+                        <li><a href="#farmerAbout">About AgroLink</a></li>
+                        <li><a href="#farmerPurchase">Purchase Materials</a></li>
+                        <li><a href="#farmerHistory">Order History</a></li>
+                    </ul>
+                </nav>
+                <div class="content" style="background-color: rgba(111, 111, 196, 0.11);">
+                    <section id="farmerHome" class="active" style="text-align: center;">
+                        <h4>Welcome to AgroLink </h4>
+                <p>your dedicated platform for direct access to government-supplied agricultural resources. We are committed to bypassing intermediaries, ensuring fair and equitable access to vital inputs and information, and empowering farmers across the nation. </p>
+                        <img src="download.jpg" alt="" height="270" width="500" >
+                    </section>
+                    <section id="farmerAbout">
+                        <h4>About AgroLink</h4>
+                        <p>AgroLink is designed to bridge the gap between farmers and essential agricultural inputs like fertilizers and seeds. We aim to eliminate the issues caused by brokers who inflate prices and divert resources, ensuring you get what you need, when you need it, at fair market rates. </p>
+                        <p>With AgroLink, you benefit from:</p>
+                        <ul>
+                            <li><strong>Transparent Access to Purchased Inputs:</strong> Clear and fair access without hidden charges. </li>
+                            <li><strong>Direct Link to Resource Providers:</strong> Connect directly with the government or designated distributors. </li>
+                            <li><strong>Elimination of Middlemen:</strong> No more exploitation by brokers. </li>
+                            <li><strong>Increased Trust:</strong> A transparent and direct process fosters confidence in the supply chain. </li>
+                        </ul>
+                        <p>Your Fayda National ID is crucial for secure and verified transactions, protecting you from fraud and ensuring accurate data for effective resource distribution.</p>
+                    </section>
+                    <section id="farmerPurchase">
+                        <h4>Purchase Agricultural Materials</h4>
+                        <p>Browse and order high-quality agricultural materials directly:</p>
+
+                        <div class="material-category">
+                            <h4>Fertilizers</h4>
+                            <div class="material-list">
+                                <div class="material-item">
+                                    <img src="dap.jpg" alt="Fertilizer (DAP)">
+                                    <h5>Fertilizer (DAP)</h5>
+                                    <p>High-quality Diammonium Phosphate, essential for crop growth.</p>
+                                    <p>Price: 50birr / bag</p>
+                                    <button class="order-btn" data-material="Fertilizer (DAP)" data-price="50">Order Now</button>
+                                </div>
+                                <div class="material-item">
+                                    <img src="urea.jpg" alt="Weedicide (Selective)">
+                                    <h5>Weedicide (Selective)</h5>
+                                    <p>Urea fertilizer is a widely used nitrogen-rich organic compound that provides essential nutrients for plant growth and increased crop yields.</p>
+                                    <p>Price: 35 birr / kg</p>
+                                    <button class="order-btn" data-material="urea" data-price="35">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="material-category">
+                            <h4>Seeds</h4>
+                            <div class="material-list">
+                                <div class="material-item">
+                                    <img src="teff.jpg" alt="Seeds (Teff - Improved Variety)">
+                                    <h5>Seeds (Teff - Improved Variety)</h5>
+                                    <p>Certified improved Teff seeds for higher yields and resilience.</p>
+                                    <p>Price: 80birr / kg</p>
+                                    <button class="order-btn" data-material="Seeds (Teff)" data-price="80">Order Now</button>
+                                </div>
+                                <div class="material-item">
+                                    <img src="maize.jpg" alt="Seeds (maize - Improved Variety)">
+                                    <h5>maize</h5>
+                                    <p>Certified improved Teff seeds for higher yields and resilience.</p>
+                                    <p>Price: 80birr / kg</p>
+                                    <button class="order-btn" data-material="Seeds (maize)" data-price="80">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="material-category">
+                            <h4>Pesticides</h4>
+                            <div class="material-list">
+                                <div class="material-item">
+                                    <img src="pestside.jpg" alt="Pesticide (Bio-friendly)">
+                                    <h5>Pesticide (Bio-friendly)</h5>
+                                    <p>Environmentally safe pesticide for common agricultural pests.</p>
+                                    <p>Price: 60birr / bottle</p>
+                                    <button class="order-btn" data-material="Pesticide (Bio-friendly)" data-price="60">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="farmerHistory">
+                        <h4>Your Order History</h4>
+                        <p>View your past orders, their current statuses, and delivery details:</p>
+                        <ul id="farmerOrderHistoryList">
+                            </ul>
+                    </section>
+                </div>
+                <button id="farmerLogout">Logout</button>
+            </div>
+        </section>
+
+        <section id="governmentSection">
+            <h2>Government Section</h2>
+            <div id="governmentAuth">
+                <h3>Welcome Government Partner!</h3>
+                <div id="governmentLogin" class="auth-form active">
+                    <h4>Login</h4>
+                    <form>
+                        <label for="governmentUsernameLogin">Please Enter Username:</label>
+                        <input type="text" id="governmentUsernameLogin" required>
+
+                        <label for="governmentPasswordLogin">Please Enter Password:</label>
+                        <input type="password" id="governmentPasswordLogin" required>
+
+                        <button type="submit">Login</button>
+                    </form>
+                    <p>New here? <a href="#" id="showGovernmentRegister">Register</a></p>
+                </div>
+
+                <div id="governmentRegister" class="auth-form">
+                    <h4>Register</h4>
+                    <form>
+                        <label for="governmentFullName">Please Enter Full Name:</label>
+                        <input type="text" id="governmentFullName" required>
+
+                        <label for="governmentEmail">Please Enter Email:</label>
+                        <input type="email" id="governmentEmail" required>
+
+                        <label for="governmentPhone">Please Enter Phone Number:</label>
+                        <input type="tel" id="governmentPhone" placeholder="e.g., +251912345678" required>
+
+                        <label for="governmentFAN">Please Enter FAN (Digital ID):</label>
+                        <input type="text" id="governmentFAN" placeholder="Your Fayda National ID (if applicable)" required>
+
+                        <label for="governmentUsernameRegister">Please Enter Username:</label>
+                        <input type="text" id="governmentUsernameRegister" required>
+
+                        <label for="governmentPasswordRegister">Please Enter Password:</label>
+                        <input type="password" id="governmentPasswordRegister" required>
+
+                        <button type="submit">Register</button>
+                    </form>
+                    <p>Already have an account? <a href="#" id="showGovernmentLogin">Login</a></p>
+                </div>
+            </div>
+
+            <div id="governmentDashboard" class="dashboard">
+                <h3>Government Dashboard</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#governmentHome" class="active">Home</a></li>
+                        <li><a href="#governmentAbout">About AgroLink</a></li>
+                        <li><a href="#governmentOrders">Farmer Orders</a></li>
+                        <li><a href="#governmentAnalytics">Analytics</a></li>
+                    </ul>
+                </nav>
+                <div class="content">
+                    <section id="governmentHome" class="active">
+                        <h4>Welcome to your AgroLink Government Dashboard!</h4>
+                        <p>This dashboard provides real-time oversight and tools to manage the distribution of agricultural inputs effectively. Your role is crucial in ensuring transparency and direct connection between resources and farmers.</p>
+                    </section>
+                    <section id="governmentAbout">
+                        <h4>About AgroLink for Government</h4>
+                        <p>AgroLink serves as a critical tool for the government to manage and oversee the agricultural supply chain. It addresses the problem of intermediaries exploiting the system by providing direct access and real-time verification of transactions.</p>
+                        <p>Key benefits for the government include:</p>
+                        <ul>
+                            <li><strong>Full Transparency in Input Sales:</strong> Clear oversight of where resources go and at what price.</li>
+                            <li><strong>Direct Connection for Resource Delivery:</strong> Efficient delivery to intended farmers.</li>
+                            <li><strong>Broker Elimination:</strong> Combating corruption and ensuring fair pricing.</li>
+                            <li><strong>Real-time Oversight:</strong> Tools for monitoring sales, tracking inventory, and identifying bottlenecks.</li>
+                            <li><strong>Enhanced Trust:</strong> Rebuilding farmer trust in the agricultural input supply chain.</li>
+                        </ul>
+                        <p>The system leverages Fayda National ID to ensure only registered and eligible farmers collect inputs, providing accurate and trustworthy data.</p>
+                    </section>
+                    <section id="governmentOrders">
+                        <h4>Farmer Orders Overview</h4>
+                        <p>View all farmer orders and track their payment and distribution status:</p>
+                        <ul id="governmentOrderList">
+                            <li>Order #001 - Farmer A (ID: FNID12345) - Fertilizer (DAP) - Status: Paid, Ready for Pickup</li>
+                            <li>Order #002 - Farmer B (ID: FNID67890) - Weedicide - Status: Pending Payment</li>
+                            <li>Order #003 - Farmer C (ID: FNID11223) - Seeds (Teff) - Status: Paid, Picked Up</li>
+                            <li>Order #004 - Farmer D (ID: FNID44556) - Pesticide - Status: Paid, Ready for Delivery</li>
+                        </ul>
+                        <p>This list dynamically updates with new orders and their status, providing full transparency.</p>
+                    </section>
+                     <section id="governmentAnalytics">
+                        <h4>Distribution Analytics</h4>
+                        <p>Access real-time analytics on input distribution, identify shortages, and monitor bottlenecks in the sales process.</p>
+                        <p><i>(This section would typically integrate with backend data to display charts, graphs, and detailed reports. For this frontend, it's a placeholder.)</i></p>
+                        <ul>
+                            <li>Total Fertilizers Distributed: 1500 bags</li>
+                            <li>Pending Orders: 250</li>
+                            <li>Top Performing Distribution Points: Region X, District Y</li>
+                            <li>Current Stock Levels: Monitor for shortages.</li>
+                        </ul>
+                    </section>
+                </div>
+                <button id="governmentLogout">Logout</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js.js"></script>
+</body>
+</html>
