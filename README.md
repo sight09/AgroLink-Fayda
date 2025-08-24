@@ -175,5 +175,5 @@ You should see:
 ## 🚀 Let's Empower Farmers
 
 AgroLink enables farmers to bypass brokers, receive verified support, and build trust in Ethiopia's agricultural systems — all through open technology.
-[👉 Click to Open AgroLink Pitch Deck]([https://gamma.app/your-deck-link](https://gamma.app/docs/Copy-of-Startup-Pitch-Deck-Template--apuw4ci143jzmbe))
+[👉 Click to Open AgroLink Pitch Deck]([https://gamma.app/your-deck-link](https://gamma.app/docs/Copy-of-Startup-Pitch-Deck-Template--apuw4ci143jzmbe)
 
