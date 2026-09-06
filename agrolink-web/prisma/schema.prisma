@@ -1,0 +1,121 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  FARMER
+  GOVERNMENT
+  ADMIN
+}
+
+model User {
+  id           String    @id @default(uuid())
+  email        String?   @unique
+  phone        String?
+  fullName     String
+  faydaId      String?   @unique
+  fyhId        String?   @unique
+  role         Role      @default(FARMER)
+  passwordHash String?
+  faydaVerified Boolean  @default(false)
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  orders       Order[]
+  notifications Notification[]
+  auditLogs    AuditLog[]
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  category    String
+  price       String   -- Stored as text (e.g., "50.00")
+  unit        String
+  image       String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  inventory   Inventory[]
+  orderItems  OrderItem[]
+}
+
+model Inventory {
+  id         String   @id @default(uuid())
+  productId  String
+  product    Product  @relation(fields: [productId], references: [id])
+  quantity   Int      @default(0)
+  unit       String
+  warehouse  String?
+  updatedAt  DateTime @updatedAt
+}
+
+model Order {
+  id             String    @id @default(uuid())
+  userId         String
+  user           User      @relation(fields: [userId], references: [id])
+  status         String    @default("PENDING")
+  totalAmount    String    -- Stored as text (e.g., "50.00")
+  faydaVerified  Boolean   @default(false)
+  pickupLocation String?
+  notes          String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  items         OrderItem[]
+  notifications Notification[]
+}
+
+model OrderItem {
+  id        String  @id @default(uuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id])
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int
+  unitPrice String
+  subtotal  String
+}
+
+model DistributionCenter {
+  id           String   @id @default(uuid())
+  name         String
+  location     String
+  contactPhone String?
+  isActive     Boolean  @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  inventory    Inventory[]
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  action    String
+  details   String?
+  ipAddress String?
+  createdAt DateTime  @default(now())
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  type      String
+  title     String
+  message   String
+  read      Boolean  @default(false)
+  link      String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
